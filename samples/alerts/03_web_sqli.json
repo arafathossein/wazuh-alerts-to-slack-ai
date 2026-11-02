@@ -1,0 +1,43 @@
+{
+  "timestamp": "2026-10-30T04:40:12.555+0000",
+  "rule": {
+    "level": 7,
+    "description": "SQL injection attempt.",
+    "id": "31103",
+    "firedtimes": 3,
+    "mitre": {
+      "id": [
+        "T1190"
+      ],
+      "tactic": [
+        "Initial Access"
+      ],
+      "technique": [
+        "Exploit Public-Facing Application"
+      ]
+    },
+    "groups": [
+      "web",
+      "accesslog",
+      "attack",
+      "sql_injection"
+    ]
+  },
+  "agent": {
+    "id": "004",
+    "name": "web-prod-01",
+    "ip": "10.20.4.11"
+  },
+  "manager": {
+    "name": "wazuh-manager"
+  },
+  "id": "1761799212.3003",
+  "data": {
+    "srcip": "198.51.100.23",
+    "url": "/shop/item.php?id=1%27%20UNION%20SELECT%20username,password%20FROM%20users--",
+    "id": "200",
+    "protocol": "GET"
+  },
+  "full_log": "198.51.100.23 - - [30/Oct/2026:04:40:12 +0000] \"GET /shop/item.php?id=1%27%20UNION%20SELECT%20username,password%20FROM%20users-- HTTP/1.1\" 200 5123 \"-\" \"sqlmap/1.8\"",
+  "location": "/var/log/nginx/access.log"
+}

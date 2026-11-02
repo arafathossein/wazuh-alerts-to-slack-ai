@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-10-30T03:02:51.090+0000",
+  "rule": {
+    "level": 7,
+    "description": "Integrity checksum changed.",
+    "id": "550",
+    "firedtimes": 1,
+    "mitre": {
+      "id": [
+        "T1565.001"
+      ],
+      "tactic": [
+        "Impact"
+      ],
+      "technique": [
+        "Stored Data Manipulation"
+      ]
+    },
+    "groups": [
+      "ossec",
+      "syscheck",
+      "syscheck_entry_modified",
+      "syscheck_file"
+    ]
+  },
+  "agent": {
+    "id": "007",
+    "name": "db-prod-02",
+    "ip": "10.20.6.21"
+  },
+  "manager": {
+    "name": "wazuh-manager"
+  },
+  "id": "1761793371.2002",
+  "syscheck": {
+    "path": "/etc/passwd",
+    "event": "modified",
+    "changed_attributes": [
+      "size",
+      "mtime",
+      "md5",
+      "sha1",
+      "sha256"
+    ],
+    "size_before": "1734",
+    "size_after": "1789",
+    "uname_after": "root"
+  },
+  "full_log": "File '/etc/passwd' modified\nMode: realtime\nChanged attributes: size,mtime,md5,sha1,sha256\nSize changed from '1734' to '1789'",
+  "location": "syscheck"
+}

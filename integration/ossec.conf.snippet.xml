@@ -1,0 +1,12 @@
+<!-- Add inside <ossec_config> in /var/ossec/etc/ossec.conf on the Wazuh manager,
+     then restart: systemctl restart wazuh-manager -->
+<integration>
+  <name>custom-ai-triage.py</name>
+  <!-- Where the triage service listens. Keep it on a private network. -->
+  <hook_url>http://127.0.0.1:8080/wazuh/alert</hook_url>
+  <!-- Sent as X-API-Key; must match SERVICE_API_KEY in the service's .env -->
+  <api_key>CHANGE_ME_LONG_RANDOM_STRING</api_key>
+  <!-- Only forward alerts at or above this level (the service also filters) -->
+  <level>7</level>
+  <alert_format>json</alert_format>
+</integration>

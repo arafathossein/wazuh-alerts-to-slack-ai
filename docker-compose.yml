@@ -1,0 +1,15 @@
+# Run the triage service next to your Wazuh manager.
+#   cp .env.example .env   # set SLACK_WEBHOOK_URL and SERVICE_API_KEY
+#   docker compose up -d --build
+services:
+  triage:
+    build: .
+    env_file: .env
+    volumes:
+      - triage-data:/app/data
+    ports:
+      - "127.0.0.1:8080:8080"   # reachable from the manager on the same host only
+    restart: unless-stopped
+
+volumes:
+  triage-data:

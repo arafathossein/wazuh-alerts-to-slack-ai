@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-10-30T05:01:00.000+0000",
+  "rule": {
+    "level": 3,
+    "description": "Successful sudo to ROOT executed.",
+    "id": "5402",
+    "firedtimes": 4,
+    "mitre": {
+      "id": [
+        "T1548.003"
+      ],
+      "tactic": [
+        "Privilege Escalation",
+        "Defense Evasion"
+      ],
+      "technique": [
+        "Sudo and Sudo Caching"
+      ]
+    },
+    "groups": [
+      "syslog",
+      "sudo"
+    ]
+  },
+  "agent": {
+    "id": "007",
+    "name": "db-prod-02",
+    "ip": "10.20.6.21"
+  },
+  "manager": {
+    "name": "wazuh-manager"
+  },
+  "id": "1761800460.4004",
+  "data": {
+    "srcuser": "deploy",
+    "dstuser": "root",
+    "command": "/usr/bin/systemctl restart postgresql"
+  },
+  "full_log": "Oct 30 05:01:00 db-prod-02 sudo: deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/systemctl restart postgresql",
+  "location": "/var/log/auth.log"
+}
